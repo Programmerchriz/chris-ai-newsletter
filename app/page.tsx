@@ -4,7 +4,8 @@ import { Features } from "@/components/landing/features";
 import { Hero } from "@/components/landing/hero";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Pricing } from "@/components/landing/pricing";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+
+import { SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -13,14 +14,12 @@ export default function Home() {
       <Features />
       <HowItWorks />
 
-      <SignedIn>
-        <div className="fixed top-4 right-4">
-          <UserButton />
-        </div>
-      </SignedIn>
+      <div className="fixed right-4 top-4">
+        <UserButton />
+      </div>
 
       <Pricing />
       <CTA />
     </main>
   );
-}
+};
