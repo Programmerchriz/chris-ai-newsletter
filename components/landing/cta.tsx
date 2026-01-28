@@ -15,7 +15,7 @@ export function CTA() {
           </h2>
           <p className="mt-6 text-lg leading-8 text-blue-100">
             Join thousands of newsletter creators who are already using AI to
-            streamline their content creation. Plans starting at just $9/month.
+            streamline their content creation. Plans starting at just $12/month.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -26,7 +26,7 @@ export function CTA() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-white">
             <div className="flex items-center justify-center gap-2">
               <Check className="size-5 text-green-300" />
-              <span className="text-sm">Starting at $9/month</span>
+              <span className="text-sm">Starting at $12/month</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <Check className="size-5 text-green-300" />
