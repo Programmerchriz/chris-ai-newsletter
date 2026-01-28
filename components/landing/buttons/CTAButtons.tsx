@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default async function CTAButtons() {
   const { has, userId } = await auth();
+  console.log(userId);
 
   // signed out
   if (!userId) {
