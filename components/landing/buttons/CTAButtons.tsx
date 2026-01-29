@@ -1,8 +1,8 @@
-
 "use client";
 
 import { SignInButton, useAuth } from "@clerk/nextjs";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function CTAButtons() {
   const { userId, isLoaded, has } = useAuth();
+  console.log(userId);
 
   if (isLoaded) {
     // signed out
@@ -32,16 +33,23 @@ export default function CTAButtons() {
           </Button>
         </>
       );
-    };
+    }
 
     // signed in
-    const hasPaidPlan =
-      (has({ plan: "pro" })) || (has({ plan: "starter" }));
+    const hasPaidPlan = has({ plan: "pro" }) || has({ plan: "starter" });
 
     if (hasPaidPlan) {
       return (
-        <Button size="lg" className="w-full sm:w-auto" asChild>
-          <Link href="/dashboard" className="flex items-center justify-center">
+        <Button
+          size="lg"
+          className="w-full sm:w-auto"
+          // asChild
+        >
+          <Link
+            href="/dashboard"
+            className="flex items-center justify-center"
+            prefetch={false}
+          >
             Go to Dashboard <ArrowRight className="ml-2 size-4" />
           </Link>
         </Button>
@@ -56,7 +64,12 @@ export default function CTAButtons() {
           </Link>
         </Button>
 
-        <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="w-full sm:w-auto"
+        >
           <Link href="#pricing">View Pricing</Link>
         </Button>
       </>
