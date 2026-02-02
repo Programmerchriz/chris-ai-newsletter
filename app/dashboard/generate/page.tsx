@@ -1,5 +1,5 @@
-// import { NewsletterGenerationPage } from "@/components/dashboard/newsletter-generation-page";
+import { NewsletterGenerationPage } from "@/components/dashboard/newsletter-generation-page";
 
-// export default function GenerationPage() {
-//   return (<NewsletterGenerationPage />);
-// }
+export default function GenerationPage() {
+  return (<NewsletterGenerationPage />);
+}
